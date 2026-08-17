@@ -1,0 +1,19 @@
+# https://hydra.cc/docs/configure_hydra/intro/ ref
+
+#pretty print
+defaults:
+  - override hydra_logging: colorlog
+  - override job_logging: colorlog
+
+#dynamically make output dir, slurm id is needed because agents love starting runs at the same time
+run:
+  dir: ${paths.log_dir}/${task_name}/runs/${now:%Y-%m-%d}_${now:%H-%M-%S}_j${oc.env:SLURM_JOB_ID,${oc.env:HOSTNAME,local}}
+sweep:
+  dir: ${paths.log_dir}/${task_name}/multiruns/${now:%Y-%m-%d}_${now:%H-%M-%S}_j${oc.env:SLURM_JOB_ID,${oc.env:HOSTNAME,local}}
+  subdir: ${hydra.job.num}
+
+job_logging:
+  handlers:
+    file:
+      # Incorporates fix from https://github.com/facebookresearch/hydra/pull/2242
+      filename: ${hydra.runtime.output_dir}/${task_name}.log

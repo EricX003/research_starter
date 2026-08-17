@@ -1,0 +1,20 @@
+defaults:
+  - model_checkpoint
+  - model_summary
+  - tqdm_progress_bar
+  - lr_monitor
+  - smooth_metrics
+  - _self_
+
+# NOTE: monitor / mode for ModelCheckpoint and EarlyStopping must be set by the
+# experiment config (e.g. ``val/coco/R@1_t2i``).  With multiple validation sets,
+# there is no sensible default — every experiment picks the metric it cares about.
+
+model_checkpoint:
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "epoch_{epoch:03d}"
+  save_last: True
+  auto_insert_metric_name: False
+
+model_summary:
+  max_depth: -1

@@ -1,0 +1,9 @@
+# https://wandb.ai
+wandb:
+  _target_: lightning.pytorch.loggers.wandb.WandbLogger
+  project: "moe_db"
+  entity: "multimodal_lab"
+  tags: ${task_name}
+  group: ""
+  log_model: False
+  save_dir: "${paths.output_dir}"

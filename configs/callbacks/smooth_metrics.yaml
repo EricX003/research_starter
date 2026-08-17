@@ -1,0 +1,3 @@
+smooth_metrics:
+  _target_: src.callbacks.smooth_metrics.SmoothMetricsCallback
+  decay: 0.98
