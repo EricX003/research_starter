@@ -6,8 +6,7 @@
 /legacy/
 /tests/
 /logs/
-/data/
-*.tex
+provtab/
 
 # --- run artifacts ----------------------------------------------------------------------------
 wandb/
@@ -51,6 +50,7 @@ ENV/
 .vscode/
 .idea/
 *.code-workspace
+/data/
 
 # --- data / model blobs -----------------------------------------------------------------------
 *.h5
@@ -63,4 +63,3 @@ ENV/
 *.npz
 *.pdf
 *.png
-provtab/
