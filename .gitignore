@@ -1,12 +1,13 @@
-/agent/
-/agent_legacy/
-/archive/
-/audit/
-/baselines/
-/legacy/
-/tests/
-/logs/
-provtab/
+# /agent/
+# /agent_legacy/
+# /archive/
+# /audit/
+# /baselines/
+# /legacy/
+# /tests/
+# /scripts/
+# /logs/
+# provtab/
 
 # --- run artifacts ----------------------------------------------------------------------------
 wandb/
