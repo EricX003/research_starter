@@ -1,12 +1,16 @@
-# /agent/
-# /agent_legacy/
-# /archive/
-# /audit/
-# /baselines/
-# /legacy/
-# /tests/
-# /scripts/
-# /logs/
+# --- agent working dirs -----------------------------------------------------------------------
+# Contents are untracked, but each dir ships a committed .gitkeep so `git clone` recreates the
+# structure with no setup step. Ignore rules do not apply to already-tracked files, so the
+# starter docs in agent/ still clone; anything new dropped into these dirs stays local.
+/agent/
+/agent_legacy/
+/archive/
+/audit/
+/baselines/
+/legacy/
+/tests/
+/scripts/
+/logs/
 # provtab/
 
 # --- run artifacts ----------------------------------------------------------------------------
