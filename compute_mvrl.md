@@ -1,3 +1,28 @@
+Our lab maintains three standalone GPU machines raven, crow, and albatross. You can also use the engineering cluster maintained by McKelvey, which we'll refer to as EIT. You can place this in your `~/.ssh/config` file (changing your ldap) to easily access any of the clusters via `ssh eit/raven/alba/crow`:
+
+```
+Host eit
+        HostName ssh.engr.wustl.edu
+        User e.xing
+        ForwardAgent yes
+
+Host alba
+        HostName albatross.engr.wustl.edu
+        User e.xing
+        ForwardAgent yes
+
+Host raven
+        HostName raven.engr.wustl.edu
+        User e.xing
+        ForwardAgent yes
+
+Host crow
+        HostName crow.engr.wustl.edu
+        User e.xing
+        ForwardAgent yes
+```
+The password on all of these university administrated machines is your WashU id password. 
+
 On most HPC clusters, you will automatically be generated a small “home directory” in addition to a larger partition on one or more “storage directories.” The home directory is designed to hold a small amount of private data (e.g. small codebases and configuration files), and typically have a limit on the order of 10GB. For convenience, you can soft-link commonly accessed data into your home directory to give the illusion that everything is in your home while not consuming all of your home directory storage. The following commands will set up your cache and conda directories to reside in storage while being accessible from home. 
 
 ```bash
